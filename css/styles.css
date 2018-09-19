@@ -280,7 +280,7 @@ nav h1 a {
 
 @media screen and (max-device-width: 420px) {
   .filter-options select {
-    width: calc(50% - 30px);
+    width: calc(50% - 24px);
   }
   nav {
     height: 60px;
