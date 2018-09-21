@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
+  mapTabindex();
 });
 
 /**
@@ -199,7 +200,19 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 
-} 
+}
+
+/*
+* Made #map tabindex=-1 so that it can be skipped in nature tab keyboard flow
+*/
+mapTabindex = () => {
+  const elMap = document.getElementById('map'); 
+  const mapChildren = elMap.children;
+
+  elMap.setAttribute("tabindex", "-1");
+}
+
+
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
