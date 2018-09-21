@@ -9,6 +9,7 @@ body,td,th,p{
 }
 body {
   width: 100%;
+  max-width: 1400px;
 	background-color: #fdfdfd;
 	margin: 0;
 	position:relative;
@@ -278,7 +279,7 @@ nav h1 a {
 }
 
 
-@media screen and (max-device-width: 420px) {
+@media screen and (max-device-width: 442px) {
   .filter-options select {
     width: calc(50% - 24px);
   }
@@ -288,7 +289,6 @@ nav h1 a {
   nav h1 {
     padding-top: 15px;
     width: 100%;
-
   }
   #footer {
     padding: 10px 25px;
@@ -315,23 +315,36 @@ nav h1 a {
   }
 }
 
-@media screen and (min-device-width: 421px) {
-
+@media screen and (min-device-width: 443px) and (max-device-width: 600px) {
+  nav h1 {
+    padding-top: 25px;
+    width: 100%;
+  }
+  .inside #maincontent #map-container {
+    height: 300px;
+    width: 100%;
+    position: relative;
+    top: 111px;
+  }  
+  #restaurant-container, #reviews-container {
+    width: 100%;
+    padding:140px 0 30px;
+  }
 }
 
 @media screen and (min-device-width: 600px) {
+  nav h1 {
+    padding-top: 25px;
+    width: 100%;
+  }
   header nav h1 a {
     letter-spacing: 10px;  
   }
-
 }
 
 @media screen and (min-device-width: 768px) {
   #restaurants-list li {
     width: calc(50% - 95px);
-  }
-  nav h1 {
-    padding-top: 25px;
   }
 }
 

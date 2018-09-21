@@ -12,10 +12,10 @@ self.addEventListener('activate', (event) => {
 
 /** Fetch and cache **/
 self.addEventListener('fetch', (event) => {
-	console.log('fetch request & cache in storage');
 	event.respondWith(
 		fetch(event.request)
 		.then(response => {
+			console.log('fetch request & cache in storage');
 			// Make a copy of response
 			const responseCopy = response.clone();
 			caches.open(cacheName)
@@ -23,7 +23,7 @@ self.addEventListener('fetch', (event) => {
 			.then(cache => {
 				cache.put(event.request, responseCopy);
 			});
-		return response;
+			return response;
 		})
 		.catch((error) => {
 			console.log('fetch from cache');
