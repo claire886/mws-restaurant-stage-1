@@ -8,6 +8,19 @@ self.addEventListener('install', (event) => {
 /** Activate service worker **/
 self.addEventListener('activate', (event) => {
 	console.log('sw activated');
+	// remove unwanted caches
+	event.waitUntil(
+		caches.keys()
+		.then(cacheNames => {
+			return Promise.all(
+				cacheNames.map(cache => {
+					if (cache !== cacheName) {
+						return caches.delete(cache);
+					}
+				})
+			)
+		})
+	)
 });
 
 /** Fetch and cache **/
